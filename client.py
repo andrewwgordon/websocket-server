@@ -1,11 +1,9 @@
-#!/usr/bin/env python
-
+import sys
 import asyncio
 import websockets
 
 async def hello():
-    uri = "wss://portal.andrewgordon.me/wss/"
-    async with websockets.connect(uri) as websocket:
+    async with websockets.connect(sys.arg[1]) as websocket:
         name = input("What's your name? ")
 
         await websocket.send(name)
