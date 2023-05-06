@@ -3,7 +3,7 @@ import asyncio
 import websockets
 
 async def hello():
-    async with websockets.connect(sys.arg[1]) as websocket:
+    async with websockets.connect(sys.argv[1]) as websocket:
         name = input("What's your name? ")
 
         await websocket.send(name)
